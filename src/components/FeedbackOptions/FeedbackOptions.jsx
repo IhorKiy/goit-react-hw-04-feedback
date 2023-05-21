@@ -1,26 +1,18 @@
-import React, { Component } from 'react';
+export const FeedbackOptions = ({ handleGood, handleNeutral, handleBad }) => {
 
-export class FeedbackOptions extends Component {
-  handleChange = evt => {
-    evt.preventDefault();
-    this.props.handleFeadbeack(evt.currentTarget.name);
-     };
-
-  render() {
-    return (
-      <>
-        <form onClick={this.handleChange}>
-          <button name="good" type="button" onClick={this.handleChange}>
-            Good
-          </button>
-          <button name="neutral" type="submit" onClick={this.handleChange}>
-            Neutral
-          </button>
-          <button name="bad" type="submit" onClick={this.handleChange}>
-            Bad
-          </button>
-        </form>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <form>
+        <button name="good" type="button" onClick={handleGood}>
+          Good
+        </button>
+        <button name="neutral" type="button" onClick={handleNeutral}>
+          Neutral
+        </button>
+        <button name="bad" type="button" onClick={handleBad}>
+          Bad
+        </button>
+      </form>
+    </>
+  );
+};
